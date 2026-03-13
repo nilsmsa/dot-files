@@ -1,0 +1,15 @@
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
+[gpg]
+	format = ssh
+[pull]
+	rebase = true
+[init]
+	defaultBranch = main
+
+# User-specific configuration
+# Include local user config from ~/.config/git/user-config
+[includeIf "gitdir:~/"]
+	path = ~/.config/git/user-config

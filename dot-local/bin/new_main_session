@@ -1,0 +1,20 @@
+#!/bin/bash
+
+SESSION_BASE="main"
+i=0
+
+# Loop until a unique session name is found
+while true; do
+  SESSION_NAME="${SESSION_BASE}-${i}"
+  # Check if a session with this name already exists
+  tmux has-session -t "$SESSION_NAME" 2>/dev/null
+  if [ $? != 0 ]; then
+    # If not found (exit status 1), create the new session and attach
+    tmux new-session -s "$SESSION_NAME"
+    break
+  else
+    # If found (exit status 0), increment the counter and try again
+    ((i++))
+  fi
+done
+
