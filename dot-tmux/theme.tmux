@@ -16,7 +16,7 @@ set -g status-style "bg=#1a1b26,fg=#c0caf5"
 set -g status-left-length 150
 
 # [K8s Context] > [Session] > [Git]
-set -g status-left "#[fg=#c0caf5,bg=#24283b] #(~/apps/bin/ctx.sh) #[fg=#24283b,bg=#7aa2f7,nobold]#[fg=#1a1b26,bg=#7aa2f7,bold] #S #[fg=#7aa2f7,bg=#24283b,nobold]#[fg=#c0caf5,bg=#24283b] #(/home/nms/go/bin/gitmux #{pane_current_path})#[fg=#24283b,bg=#1a1b26]"
+set -g status-left "#[fg=#c0caf5,bg=#24283b] #(~/.local/bin/ctx.sh) #[fg=#24283b,bg=#7aa2f7,nobold]#[fg=#1a1b26,bg=#7aa2f7,bold] #S #[fg=#7aa2f7,bg=#24283b,nobold]#[fg=#c0caf5,bg=#24283b] #(/home/nms/go/bin/gitmux #{pane_current_path})#[fg=#24283b,bg=#1a1b26]"
 
 
 #set -g status-left-length 100
