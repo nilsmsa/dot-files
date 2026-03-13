@@ -9,7 +9,14 @@ vim.pack.add({
 -- 2. Initialize plugins in the correct order
 require("mason").setup()
 require("mason-lspconfig").setup({
-	ensure_installed = { "lua_ls" }, -- Use 'lua_ls', NOT 'lua-lsp'
+	ensure_installed = {
+		"lua_ls",
+		"java_language_server",
+		"bashls",
+		"gradle_ls",
+		"kotlin_language_server",
+		"postgres_lsp",
+	}, -- Use 'lua_ls', NOT 'lua-lsp'
 })
 
 -- 3. Configure the LSP client
