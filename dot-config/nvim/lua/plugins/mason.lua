@@ -13,11 +13,21 @@ require("mason-lspconfig").setup({
 })
 
 -- 3. Configure the LSP client
-local lspconfig = require("lspconfig")
-lspconfig.lua_ls.setup({
+--local lspconfig = require("lspconfig")
+--lspconfig.lua_ls.setup({
+--	settings = {
+--		Lua = {
+--			diagnostics = { globals = { "vim" } }, -- Fixes 'undefined global vim'
+--		},
+--	},
+--})
+
+vim.lsp.config("lua_ls", {
 	settings = {
 		Lua = {
 			diagnostics = { globals = { "vim" } }, -- Fixes 'undefined global vim'
 		},
 	},
 })
+
+vim.lsp.enable("lua_ls")
