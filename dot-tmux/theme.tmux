@@ -31,8 +31,13 @@ set -g status-right "#[fg=#565f89,bg=#1a1b26,nobold,noitalics,nounderscore]#[
 set -g status-right-length 50
 
 # Pane borders (matching the dark gutter/sidebar colors)
-set -g pane-border-style "fg=#565f89"
-set -g pane-active-border-style "fg=#7aa2f7"
+set -g pane-border-lines heavy
+set -g pane-border-style "fg=#3b4261"
+set -g pane-active-border-style "fg=#bb9af7"
+
+# Dim inactive panes — makes the active one immediately obvious
+set -g window-style "fg=#565f89,bg=#16161e"
+set -g window-active-style "fg=#c0caf5,bg=#1a1b26"
 
 # Message text
 set -g message-style "fg=#7dcfff,bg=#1a1b26"
