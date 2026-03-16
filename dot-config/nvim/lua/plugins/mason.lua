@@ -11,7 +11,6 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
-		"java_language_server",
 		"bashls",
 		"gradle_ls",
 		"kotlin_language_server",
