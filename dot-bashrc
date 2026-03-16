@@ -67,6 +67,21 @@ fi
 # Place your individual script files (e.g., aliases.sh, functions.sh) inside this directory
 
 # Set the path to your custom Bash scripts directory
+BASH_SCRIPTS_DIR="$HOME/.bashrc.stow.d"
+
+# Check if the directory exists and is readable
+if [ -d "$BASH_SCRIPTS_DIR" ] && [ -r "$BASH_SCRIPTS_DIR" ]; then
+  # Loop through all files in the directory
+  for file in "$BASH_SCRIPTS_DIR"/*; do
+    # Check if the current item is a regular file and is readable
+    if [ -f "$file" ] && [ -r "$file" ]; then
+      # Source the file
+      . "$file" # or source "$file"
+    fi
+  done
+fi
+
+# Set the path to your custom Bash scripts directory
 BASH_SCRIPTS_DIR="$HOME/.bashrc.d"
 
 # Check if the directory exists and is readable
