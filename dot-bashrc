@@ -95,4 +95,3 @@ if [ -d "$BASH_SCRIPTS_DIR" ] && [ -r "$BASH_SCRIPTS_DIR" ]; then
     fi
   done
 fi
-
