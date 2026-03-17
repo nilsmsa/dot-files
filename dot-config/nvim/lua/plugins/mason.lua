@@ -13,7 +13,7 @@ require("mason-lspconfig").setup({
 		"lua_ls",
 		"bashls",
 		"gradle_ls",
-		"kotlin_language_server",
+		"kotlin_lsp",
 		"postgres_lsp",
 	}, -- Use 'lua_ls', NOT 'lua-lsp'
 })
