@@ -23,8 +23,8 @@ set -g status-left "#[fg=#c0caf5,bg=#24283b] #(~/.local/bin/ctx.sh) #[fg=#24283b
 set -g status-justify centre
 
 # Window tabs: Styling for active and inactive windows
-setw -g window-status-format "#[fg=#1a1b26,bg=#1a1b26,nobold,noitalics,nounderscore]#[fg=#c0caf5,bg=#1a1b26] #I  #W #[fg=#1a1b26,bg=#1a1b26,nobold,noitalics,nounderscore]"
-setw -g window-status-current-format "#[fg=#1a1b26,bg=#bb9af7,nobold,noitalics,nounderscore]#[fg=#1a1b26,bg=#bb9af7,bold] #I  #W #[fg=#bb9af7,bg=#1a1b26,nobold,noitalics,nounderscore]"
+setw -g window-status-format "#[fg=#1a1b26,bg=#1a1b26,nobold,noitalics,nounderscore]#[fg=#c0caf5,bg=#1a1b26] #I  #{pane_current_command} #[fg=#1a1b26,bg=#1a1b26,nobold,noitalics,nounderscore]"
+setw -g window-status-current-format "#[fg=#1a1b26,bg=#bb9af7,nobold,noitalics,nounderscore]#[fg=#1a1b26,bg=#bb9af7,bold] #I  #{pane_current_command} #[fg=#bb9af7,bg=#1a1b26,nobold,noitalics,nounderscore]"
 
 # Right side: Hostname and Date/Time
 set -g status-right "#[fg=#565f89,bg=#1a1b26,nobold,noitalics,nounderscore]#[fg=#1a1b26,bg=#565f89] %Y-%m-%d  %H:%M #[fg=#7aa2f7,bg=#565f89,nobold,noitalics,nounderscore]#[fg=#1a1b26,bg=#7aa2f7,bold] #h "
