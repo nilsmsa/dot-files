@@ -20,7 +20,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 				enabled = true,
 				-- Optional: show automatically when entering a function
 				trigger = {
-					show_on_insert = true,
+					show_on_insert = false,
 				},
 				-- Optional: customize the window appearance
 				window = { border = "rounded" },
@@ -31,6 +31,8 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 			},
 			completion = {
 				documentation = { auto_show = false },
+				trigger = { show_on_insert = false },
+				menu = { auto_show = false },
 			},
 			sources = {
 				default = { "lsp", "path", "snippets", "buffer", "copilot" },

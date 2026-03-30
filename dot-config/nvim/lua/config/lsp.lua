@@ -3,9 +3,8 @@ local augroup = function(name)
 end
 
 local toggle_inlay_hints = function()
-	local enabled = not vim.lsp.inlay_hint.is_enabled({ 0 }) -- Check current state
-	vim.lsp.inlay_hint.enable(enabled, { 0 }) -- Enable or disable
-	-- Optional: Show a notification
+	local enabled = not vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+	vim.lsp.inlay_hint.enable(enabled, { bufnr = 0 })
 	vim.notify("Inlay hints: " .. (enabled and "ON" or "OFF"))
 end
 
@@ -75,11 +74,11 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 			-- Inlay hints
 			if client:supports_method("textDocument/inlayHints") then
-				vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+				vim.lsp.inlay_hint.enable(false, { bufnr = args.buf })
 			end
 
 			if client:supports_method("textDocument/documentColor") then
-				vim.lsp.document_color.enable(true, args.buf, {
+				vim.lsp.document_color.enable(true, { bufnr = args.buf }, {
 					style = "background", -- 'background', 'foreground', or 'virtual'
 				})
 			end
