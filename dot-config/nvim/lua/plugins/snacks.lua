@@ -15,7 +15,7 @@ Snacks.setup({
 		replace_netrw = true,
 	},
 	image = { enabled = true },
-	indent = { enabled = true },
+	indent = { enabled = true, animate = { enabled = false } },
 	input = { enabled = true },
 	layout = { enabled = true },
 	notifier = { enabled = true },

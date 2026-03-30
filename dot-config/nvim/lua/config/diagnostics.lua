@@ -39,6 +39,7 @@ local diagnostic_goto = function(next, severity)
 end
 
 map("n", "<leader>ce", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
+map("n", "T", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
 map("n", "]d", diagnostic_goto(true), { desc = "Next Diagnostic" })
 map("n", "[d", diagnostic_goto(false), { desc = "Prev Diagnostic" })
 map("n", "]e", diagnostic_goto(true, "ERROR"), { desc = "Next Error" })
