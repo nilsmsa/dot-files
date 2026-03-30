@@ -172,3 +172,13 @@ map("n", "<leader>tw", "<cmd>set wrap!<CR>", { desc = "Toggle Wrap", silent = tr
 
 -- Fix spelling (picks first suggestion)
 map("n", "z0", "1z=", { desc = "Fix word under cursor" })
+
+-- ═══════════════════════════════════════════════════════════
+-- PLUGIN MANAGEMENT
+-- ═══════════════════════════════════════════════════════════
+
+vim.api.nvim_create_user_command("PackUpdate", function()
+	vim.pack.update()
+end, { desc = "Update all plugins" })
+
+map("n", "<leader>pu", "<cmd>PackUpdate<cr>", { desc = "Update Plugins" })
