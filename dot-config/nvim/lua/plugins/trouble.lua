@@ -11,7 +11,7 @@ require("trouble").setup({
 			auto_close = false,
 			win = {
 				position = "bottom",
-				size = { height = 12 },
+				size = { height = 8 },
 			},
 		},
 	},

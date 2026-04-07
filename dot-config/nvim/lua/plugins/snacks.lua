@@ -112,6 +112,7 @@ Snacks.setup({
 				git_status_open = false,
 				git_untracked = true,
 				jump = { close = false },
+				layout = { layout = { position = "right" } },
 				tree = true,
 				watch = true,
 				exclude = {
