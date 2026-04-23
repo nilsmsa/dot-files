@@ -69,6 +69,7 @@ opt.encoding = "UTF-8" -- Set encoding
 -- Folding settings
 opt.smoothscroll = true
 vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldlevel = 99 -- Start with all folds open
 opt.formatoptions = "jcroqlnt" -- tcqj
 opt.grepformat = "%f:%l:%c:%m"

@@ -57,7 +57,6 @@ vim.api.nvim_create_autocmd("FileType", {
 		"qf",
 		"spectre_panel",
 		"startuptime",
-		"tsplayground",
 	},
 	callback = function(event)
 		vim.bo[event.buf].buflisted = false
@@ -132,7 +131,18 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	end,
 })
 
--- Set filetype for .code-snippets files
+-- Start treesitter highlighting for all filetypes that have a parser
+vim.api.nvim_create_autocmd("FileType", {
+	group = augroup("treesitter_start"),
+	pattern = { "*" },
+	callback = function()
+		local filetype = vim.bo.filetype
+		if filetype and filetype ~= "" then
+			pcall(vim.treesitter.start)
+		end
+	end,
+})
+
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 	group = augroup("code_snippets_filetype"),
 	pattern = { "*.code-snippets" },
