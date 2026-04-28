@@ -96,7 +96,7 @@ map("i", ";", ";<c-g>u")
 -- ═══════════════════════════════════════════════════════════
 
 -- Save file (works in all modes)
-map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save File" })
+map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>wa<cr><esc>", { desc = "Save All Files" })
 
 -- Quit operations
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
