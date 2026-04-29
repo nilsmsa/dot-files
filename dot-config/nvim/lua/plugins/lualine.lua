@@ -1,10 +1,20 @@
 -- lua/plugins/theme.lua
 vim.pack.add({ "https://github.com/nvim-lualine/lualine.nvim" })
 
+-- Custom theme: active pane gets a visible blue tint, inactive is near-black
+local theme = {
+	normal   = { a = { fg = "#1a1b26", bg = "#7aa2f7", gui = "bold" }, b = { fg = "#c0caf5", bg = "#2d3f76" }, c = { fg = "#c0caf5", bg = "#1f2335" } },
+	insert   = { a = { fg = "#1a1b26", bg = "#9ece6a", gui = "bold" }, b = { fg = "#c0caf5", bg = "#2d3f76" }, c = { fg = "#c0caf5", bg = "#1f2335" } },
+	visual   = { a = { fg = "#1a1b26", bg = "#bb9af7", gui = "bold" }, b = { fg = "#c0caf5", bg = "#2d3f76" }, c = { fg = "#c0caf5", bg = "#1f2335" } },
+	replace  = { a = { fg = "#1a1b26", bg = "#f7768e", gui = "bold" }, b = { fg = "#c0caf5", bg = "#2d3f76" }, c = { fg = "#c0caf5", bg = "#1f2335" } },
+	command  = { a = { fg = "#1a1b26", bg = "#e0af68", gui = "bold" }, b = { fg = "#c0caf5", bg = "#2d3f76" }, c = { fg = "#c0caf5", bg = "#1f2335" } },
+	inactive = { a = { fg = "#c0caf5", bg = "#2d3f76" }, b = { fg = "#3b4261", bg = "#0d0e16" }, c = { fg = "#3b4261", bg = "#0d0e16" } },
+}
+
 require("lualine").setup({
 	options = {
 		icons_enabled = true,
-		theme = "auto",
+		theme = theme,
 		component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
 		disabled_filetypes = {
@@ -43,9 +53,9 @@ require("lualine").setup({
 		lualine_z = { "location" },
 	},
 	inactive_sections = {
-		lualine_a = {},
+		lualine_a = { "filename" },
 		lualine_b = {},
-		lualine_c = { "filename" },
+		lualine_c = {},
 		lualine_x = { "location" },
 		lualine_y = {},
 		lualine_z = {},
