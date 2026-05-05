@@ -156,15 +156,29 @@ vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "#3e4452", underline = true })
 vim.api.nvim_set_hl(0, "LspReferenceRead", { link = "LspReferenceText" })
 vim.api.nvim_set_hl(0, "LspReferenceWrite", { link = "LspReferenceText" })
 
+-- 2. Only create the cursor autocmds when an LSP attaches to a buffer
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
 
-vim.api.nvim_create_autocmd("CursorHold", {
-  callback = function()
-    vim.lsp.buf.document_highlight()
-  end,
-})
+    -- Only proceed if the server supports document highlighting
+    if client and client.supports_method("textDocument/documentHighlight") then
+      local group = vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
 
-vim.api.nvim_create_autocmd("CursorMoved", {
-  callback = function()
-    vim.lsp.buf.clear_references()
+      -- Clear existing autocmds for this buffer to avoid duplication
+      vim.api.nvim_clear_autocmds({ buffer = args.buf, group = group })
+
+      vim.api.nvim_create_autocmd("CursorHold", {
+        buffer = args.buf,
+        group = group,
+        callback = vim.lsp.buf.document_highlight,
+      })
+
+      vim.api.nvim_create_autocmd("CursorMoved", {
+        buffer = args.buf,
+        group = group,
+        callback = vim.lsp.buf.clear_references,
+      })
+    end
   end,
 })
