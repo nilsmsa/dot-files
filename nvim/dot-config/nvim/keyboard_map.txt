@@ -1,0 +1,857 @@
+Keyboard map summary
+
+Extracted mappings (Mode | Key -> Action) with descriptions and source.
+
+---
+
+Mode: ?
+Key : ?
+Act : local map = vim.keymap.set
+Desc: 
+Src : ./lua/config/keymaps.lua:1
+
+Mode: n
+Key : <Tab>
+Act : :bnext<CR>
+Desc: Next buffer
+Src : ./lua/config/keymaps.lua:9
+
+Mode: n
+Key : <S-Tab>
+Act : :bprevious<CR>
+Desc: Previous buffer
+Src : ./lua/config/keymaps.lua:10
+
+Mode: n
+Key : <leader>bb
+Act : <cmd>e #<cr>
+Desc: Switch to Other Buffer
+Src : ./lua/config/keymaps.lua:13
+
+Mode: n
+Key : <C-h>
+Act : <C-w>h
+Desc: Go to Left Window
+Src : ./lua/config/keymaps.lua:20
+
+Mode: n
+Key : <C-j>
+Act : <C-w>j
+Desc: Go to Lower Window
+Src : ./lua/config/keymaps.lua:21
+
+Mode: n
+Key : <C-k>
+Act : <C-w>k
+Desc: Go to Upper Window
+Src : ./lua/config/keymaps.lua:22
+
+Mode: n
+Key : <C-l>
+Act : <C-w>l
+Desc: Go to Right Window
+Src : ./lua/config/keymaps.lua:23
+
+Mode: n
+Key : <C-RIGHT>
+Act : <cmd>vertical resize -5<CR>
+Desc: 
+Src : ./lua/config/keymaps.lua:26
+
+Mode: n
+Key : <C-DOWN>
+Act : <cmd>resize -5<CR>
+Desc: 
+Src : ./lua/config/keymaps.lua:27
+
+Mode: n
+Key : <C-UP>
+Act : <cmd>resize +5<CR>
+Desc: 
+Src : ./lua/config/keymaps.lua:28
+
+Mode: n
+Key : <C-LEFT>
+Act : <cmd>vertical resize +5<CR>
+Desc: 
+Src : ./lua/config/keymaps.lua:29
+
+Mode: n
+Key : <leader>ww
+Act : <C-W>p
+Desc: Other Window
+Src : ./lua/config/keymaps.lua:32
+
+Mode: n
+Key : <leader>wd
+Act : <C-W>c
+Desc: Delete Window
+Src : ./lua/config/keymaps.lua:33
+
+Mode: n
+Key : <leader>sh
+Act : <C-W>s
+Desc: Split Window Below
+Src : ./lua/config/keymaps.lua:34
+
+Mode: n
+Key : <leader>sv
+Act : <C-W>v
+Desc: Split Window Right
+Src : ./lua/config/keymaps.lua:35
+
+Mode: n,x
+Key : j
+Act : v:count == 0 ? 'gj' : 'j'
+Desc: Down
+Src : ./lua/config/keymaps.lua:42
+
+Mode: n,x
+Key : <Down>
+Act : v:count == 0 ? 'gj' : 'j'
+Desc: Down
+Src : ./lua/config/keymaps.lua:43
+
+Mode: n,x
+Key : k
+Act : v:count == 0 ? 'gk' : 'k'
+Desc: Up
+Src : ./lua/config/keymaps.lua:44
+
+Mode: n,x
+Key : <Up>
+Act : v:count == 0 ? 'gk' : 'k'
+Desc: Up
+Src : ./lua/config/keymaps.lua:45
+
+Mode: n
+Key : gl
+Act : $
+Desc: Go to end of line
+Src : ./lua/config/keymaps.lua:52
+
+Mode: n
+Key : gh
+Act : ^
+Desc: Go to start of line
+Src : ./lua/config/keymaps.lua:53
+
+Mode: n
+Key : ==
+Act : gg<S-v>G
+Desc: 
+Src : ./lua/config/keymaps.lua:56
+
+Mode: i,n
+Key : <esc>
+Act : <cmd>noh<cr><esc>
+Desc: Escape and Clear hlsearch
+Src : ./lua/config/keymaps.lua:59
+
+Mode: n
+Key : n
+Act : 'Nn'[v:searchforward].'zv'
+Desc: Next Search Result
+Src : ./lua/config/keymaps.lua:62
+
+Mode: x
+Key : n
+Act : 'Nn'[v:searchforward]
+Desc: Next Search Result
+Src : ./lua/config/keymaps.lua:63
+
+Mode: o
+Key : n
+Act : 'Nn'[v:searchforward]
+Desc: Next Search Result
+Src : ./lua/config/keymaps.lua:64
+
+Mode: n
+Key : N
+Act : 'nN'[v:searchforward].'zv'
+Desc: Prev Search Result
+Src : ./lua/config/keymaps.lua:65
+
+Mode: x
+Key : N
+Act : 'nN'[v:searchforward]
+Desc: Prev Search Result
+Src : ./lua/config/keymaps.lua:66
+
+Mode: o
+Key : N
+Act : 'nN'[v:searchforward]
+Desc: Prev Search Result
+Src : ./lua/config/keymaps.lua:67
+
+Mode: v
+Key : <
+Act : <gv
+Desc: 
+Src : ./lua/config/keymaps.lua:74
+
+Mode: v
+Key : >
+Act : >gv
+Desc: 
+Src : ./lua/config/keymaps.lua:75
+
+Mode: v
+Key : p
+Act : "_dP
+Desc: 
+Src : ./lua/config/keymaps.lua:78
+
+Mode: n
+Key : <C-c>
+Act : :%y+<CR>
+Desc: 
+Src : ./lua/config/keymaps.lua:81
+
+Mode: i
+Key : ,
+Act : ,<c-g>u
+Desc: 
+Src : ./lua/config/keymaps.lua:84
+
+Mode: i
+Key : .
+Act : .<c-g>u
+Desc: 
+Src : ./lua/config/keymaps.lua:85
+
+Mode: i
+Key : ;
+Act : ;<c-g>u
+Desc: 
+Src : ./lua/config/keymaps.lua:86
+
+Mode: i
+Key : `
+Act : ``<left>
+Desc: 
+Src : ./lua/config/keymaps.lua:89
+
+Mode: i
+Key : "
+Act : ""<left>
+Desc: 
+Src : ./lua/config/keymaps.lua:90
+
+Mode: i
+Key : (
+Act : ()<left>
+Desc: 
+Src : ./lua/config/keymaps.lua:91
+
+Mode: i
+Key : [
+Act : []<left>
+Desc: 
+Src : ./lua/config/keymaps.lua:92
+
+Mode: i
+Key : {
+Act : {}<left>
+Desc: 
+Src : ./lua/config/keymaps.lua:93
+
+Mode: i
+Key : <
+Act : <><left>
+Desc: 
+Src : ./lua/config/keymaps.lua:94
+
+Mode: i
+Key : '
+Act : ''<left>
+Desc: 
+Src : ./lua/config/keymaps.lua:96
+
+Mode: i,x,n,s
+Key : <C-s>
+Act : <cmd>w<cr><esc>
+Desc: Save File
+Src : ./lua/config/keymaps.lua:103
+
+Mode: n
+Key : <leader>qq
+Act : <cmd>qa<cr>
+Desc: Quit All
+Src : ./lua/config/keymaps.lua:106
+
+Mode: n
+Key : <leader>xl
+Act : function(
+Desc: 
+Src : ./lua/config/keymaps.lua:113
+
+Mode: n
+Key : <leader>xq
+Act : function(
+Desc: 
+Src : ./lua/config/keymaps.lua:120
+
+Mode: n
+Key : [q
+Act : vim.cmd.cprev
+Desc: Previous Quickfix
+Src : ./lua/config/keymaps.lua:127
+
+Mode: n
+Key : ]q
+Act : vim.cmd.cnext
+Desc: Next Quickfix
+Src : ./lua/config/keymaps.lua:128
+
+Mode: n
+Key : <leader>ui
+Act : vim.show_pos
+Desc: Inspect Pos
+Src : ./lua/config/keymaps.lua:131
+
+Mode: n
+Key : <leader>uI
+Act : <cmd>InspectTree<cr>
+Desc: Inspect Tree
+Src : ./lua/config/keymaps.lua:132
+
+Mode: n
+Key : <leader>K
+Act : <cmd>norm! K<cr>
+Desc: Keywordprg
+Src : ./lua/config/keymaps.lua:135
+
+Mode: t
+Key : <esc><esc>
+Act : <c-\\><c-n>
+Desc: Enter Normal Mode
+Src : ./lua/config/keymaps.lua:142
+
+Mode: t
+Key : <C-h>
+Act : <cmd>wincmd h<cr>
+Desc: Go to Left Window
+Src : ./lua/config/keymaps.lua:143
+
+Mode: t
+Key : <C-j>
+Act : <cmd>wincmd j<cr>
+Desc: Go to Lower Window
+Src : ./lua/config/keymaps.lua:144
+
+Mode: t
+Key : <C-k>
+Act : <cmd>wincmd k<cr>
+Desc: Go to Upper Window
+Src : ./lua/config/keymaps.lua:145
+
+Mode: t
+Key : <C-l>
+Act : <cmd>wincmd l<cr>
+Desc: Go to Right Window
+Src : ./lua/config/keymaps.lua:146
+
+Mode: t
+Key : <C-/>
+Act : <cmd>close<cr>
+Desc: Hide Terminal
+Src : ./lua/config/keymaps.lua:147
+
+Mode: t
+Key : <c-_>
+Act : <cmd>close<cr>
+Desc: which_key_ignore
+Src : ./lua/config/keymaps.lua:148
+
+Mode: n
+Key : <leader><tab>l
+Act : <cmd>tablast<cr>
+Desc: Last Tab
+Src : ./lua/config/keymaps.lua:154
+
+Mode: n
+Key : <leader><tab>o
+Act : <cmd>tabonly<cr>
+Desc: Close Other Tabs
+Src : ./lua/config/keymaps.lua:155
+
+Mode: n
+Key : <leader><tab>f
+Act : <cmd>tabfirst<cr>
+Desc: First Tab
+Src : ./lua/config/keymaps.lua:156
+
+Mode: n
+Key : <leader><tab><tab>
+Act : <cmd>tabnew<cr>
+Desc: New Tab
+Src : ./lua/config/keymaps.lua:157
+
+Mode: n
+Key : <leader><tab>]
+Act : <cmd>tabnext<cr>
+Desc: Next Tab
+Src : ./lua/config/keymaps.lua:158
+
+Mode: n
+Key : <leader><tab>d
+Act : <cmd>tabclose<cr>
+Desc: Close Tab
+Src : ./lua/config/keymaps.lua:159
+
+Mode: n
+Key : <leader><tab>[
+Act : <cmd>tabprevious<cr>
+Desc: Previous Tab
+Src : ./lua/config/keymaps.lua:160
+
+Mode: n
+Key : zv
+Act : zMzvzz
+Desc: Close all folds except the current one
+Src : ./lua/config/keymaps.lua:167
+
+Mode: n
+Key : zj
+Act : zcjzOzz
+Desc: Close current fold when open. Always open next fold.
+Src : ./lua/config/keymaps.lua:170
+
+Mode: n
+Key : zk
+Act : zckzOzz
+Desc: Close current fold when open. Always open previous fold.
+Src : ./lua/config/keymaps.lua:171
+
+Mode: n
+Key : <leader>tw
+Act : <cmd>set wrap!<CR>
+Desc: Toggle Wrap
+Src : ./lua/config/keymaps.lua:178
+
+Mode: n
+Key : z0
+Act : 1z=
+Desc: Fix word under cursor
+Src : ./lua/config/keymaps.lua:181
+
+Mode: ?
+Key : ?
+Act : local map = vim.keymap.set
+Desc: 
+Src : ./lua/config/diagnostics.lua:2
+
+Mode: n
+Key : <leader>cd
+Act : vim.diagnostic.open_float
+Desc: Line Diagnostics
+Src : ./lua/config/diagnostics.lua:66
+
+Mode: n
+Key : ]d
+Act : diagnostic_goto(true)
+Desc: Next Diagnostic
+Src : ./lua/config/diagnostics.lua:67
+
+Mode: n
+Key : [d
+Act : diagnostic_goto(false)
+Desc: Prev Diagnostic
+Src : ./lua/config/diagnostics.lua:68
+
+Mode: n
+Key : ]e
+Act : diagnostic_goto(true, "ERROR")
+Desc: Next Error
+Src : ./lua/config/diagnostics.lua:69
+
+Mode: n
+Key : [e
+Act : diagnostic_goto(false, "ERROR")
+Desc: Prev Error
+Src : ./lua/config/diagnostics.lua:70
+
+Mode: n
+Key : ]w
+Act : diagnostic_goto(true, "WARN")
+Desc: Next Warning
+Src : ./lua/config/diagnostics.lua:71
+
+Mode: n
+Key : [w
+Act : diagnostic_goto(false, "WARN")
+Desc: Prev Warning
+Src : ./lua/config/diagnostics.lua:72
+
+Mode: n
+Key : <leader>uf
+Act : function(
+Desc: 
+Src : ./lua/plugins/conform.lua:58
+
+Mode: n,v
+Key : <leader>cn
+Act : <cmd>ConformInfo<cr>
+Desc: Conform Info
+Src : ./lua/plugins/conform.lua:67
+
+Mode: n,v
+Key : <leader>cf
+Act : function(
+Desc: 
+Src : ./lua/plugins/conform.lua:69
+
+Mode: n,v
+Key : <leader>cF
+Act : function(
+Desc: 
+Src : ./lua/plugins/conform.lua:77
+
+Mode: ?
+Key : ?
+Act : vim.keymap.set(
+Desc: 
+Src : ./lua/config/lsp.lua:41
+
+Mode: n
+Key : <leader>sn
+Act : 
+Desc: +noice
+Src : ./lua/plugins/noice.lua:43
+
+Mode: c
+Key : <S-Enter>
+Act : function() require("noice").redirect(vim.fn.getcmdline()) end
+Desc: Redirect Cmdline
+Src : ./lua/plugins/noice.lua:44
+
+Mode: n
+Key : <leader>snl
+Act : function() require("noice").cmd("last") end
+Desc: Noice Last Message
+Src : ./lua/plugins/noice.lua:45
+
+Mode: n
+Key : <leader>snh
+Act : function() require("noice").cmd("history") end
+Desc: Noice History
+Src : ./lua/plugins/noice.lua:46
+
+Mode: n
+Key : <leader>sna
+Act : function() require("noice").cmd("all") end
+Desc: Noice All
+Src : ./lua/plugins/noice.lua:47
+
+Mode: n
+Key : <leader>snd
+Act : function() require("noice").cmd("dismiss") end
+Desc: Dismiss All
+Src : ./lua/plugins/noice.lua:48
+
+Mode: n
+Key : <leader>snt
+Act : function() require("noice").cmd("pick") end
+Desc: Noice Picker
+Src : ./lua/plugins/noice.lua:49
+
+Mode: i,n,s
+Key : <c-f>
+Act : function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end
+Desc: Scroll Forward
+Src : ./lua/plugins/noice.lua:50
+
+Mode: i,n,s
+Key : <c-b>
+Act : function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end
+Desc: Scroll Backward
+Src : ./lua/plugins/noice.lua:51
+
+Mode: n
+Key : q
+Act : function(
+Desc: 
+Src : ./lua/config/autocmds.lua:66
+
+Mode: n,v,x
+Key : <leader>sr
+Act : function(
+Desc: 
+Src : ./lua/plugins/grug-far.lua:9
+
+Mode: <leader>us
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:131
+
+Mode: <leader>uw
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:132
+
+Mode: <leader>uL
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:133
+
+Mode: <leader>ud
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:134
+
+Mode: <leader>ul
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:135
+
+Mode: <leader>uc
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:141
+
+Mode: <leader>uA
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:144
+
+Mode: <leader>uT
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:145
+
+Mode: <leader>ub
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:146
+
+Mode: <leader>uD
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:147
+
+Mode: <leader>ua
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:148
+
+Mode: <leader>ug
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:149
+
+Mode: <leader>uS
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:150
+
+Mode: <leader>dpp
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:151
+
+Mode: <leader>dph
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:152
+
+Mode: <leader>wm
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:153
+
+Mode: <leader>uz
+Key : 
+Act : 
+Desc: 
+Src : ./lua/plugins/snacks.lua:154
+
+Mode: mode
+Key : map[1]
+Act : map[2]
+Desc: 
+Src : ./lua/plugins/snacks.lua:292
+
+Mode: map[1]
+Key : map[2]
+Act : function(
+Desc: 
+Src : ./lua/plugins/treesitter.lua:89
+
+Mode: modes
+Key : lhs
+Act : function(
+Desc: 
+Src : ./lua/plugins/treesitter.lua:109
+
+Mode: mode
+Key : lhs
+Act : rhs
+Desc: 
+Src : ./lua/plugins/git.lua:27
+
+Mode: mode
+Key : lhs
+Act : rhs
+Desc: 
+Src : ./lua/plugins/git.lua:28
+
+Mode: n
+Key : ]h
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:31
+
+Mode: n
+Key : [h
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:39
+
+Mode: n
+Key : ]H
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:47
+
+Mode: n
+Key : [H
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:50
+
+Mode: n,v
+Key : <leader>ghs
+Act : :Gitsigns stage_hunk<CR>
+Desc: 
+Src : ./lua/plugins/git.lua:54
+
+Mode: n,v
+Key : <leader>ghr
+Act : :Gitsigns reset_hunk<CR>
+Desc: 
+Src : ./lua/plugins/git.lua:55
+
+Mode: n
+Key : <leader>ghS
+Act : gs.stage_buffer
+Desc: 
+Src : ./lua/plugins/git.lua:57
+
+Mode: n
+Key : <leader>ghu
+Act : gs.undo_stage_hunk
+Desc: 
+Src : ./lua/plugins/git.lua:58
+
+Mode: n
+Key : <leader>ghR
+Act : gs.reset_buffer
+Desc: 
+Src : ./lua/plugins/git.lua:59
+
+Mode: n
+Key : <leader>ghp
+Act : gs.preview_hunk_inline
+Desc: 
+Src : ./lua/plugins/git.lua:60
+
+Mode: n
+Key : <leader>ghb
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:61
+
+Mode: n
+Key : <leader>ghB
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:64
+
+Mode: n
+Key : <leader>ghd
+Act : gs.diffthis
+Desc: 
+Src : ./lua/plugins/git.lua:67
+
+Mode: n
+Key : <leader>ghD
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:68
+
+Mode: o,x
+Key : ih
+Act : :<C-U>Gitsigns select_hunk<CR>
+Desc: 
+Src : ./lua/plugins/git.lua:72
+
+Mode: n
+Key : <leader>gd
+Act : <Cmd>DiffviewOpen<CR>
+Desc: Diff: git status
+Src : ./lua/plugins/git.lua:202
+
+Mode: n
+Key : <leader>gv
+Act : <Cmd>DiffviewFileHistory<CR>
+Desc: Diff: repo history
+Src : ./lua/plugins/git.lua:204
+
+Mode: n
+Key : <leader>gV
+Act : <Cmd>DiffviewFileHistory %<CR>
+Desc: Diff: current file history
+Src : ./lua/plugins/git.lua:205
+
+Mode: v
+Key : <leader>gv
+Act : :'<,'>DiffviewFileHistory<CR>
+Desc: Diff: selection history
+Src : ./lua/plugins/git.lua:208
+
+Mode: n
+Key : <leader>gc
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:211
+
+Mode: n
+Key : <leader>gC
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:219
+
+Mode: n
+Key : <leader>g2
+Act : function(
+Desc: 
+Src : ./lua/plugins/git.lua:228
+
+---
+Conflicts (same mode+key mapped more than once)
+
+Conflict: Mode=? Key=? -- 3 mappings
+  - local map = vim.keymap.set  (./lua/config/keymaps.lua:1) desc=''
+  - local map = vim.keymap.set  (./lua/config/diagnostics.lua:2) desc=''
+  - vim.keymap.set(  (./lua/config/lsp.lua:41) desc=''
+
+Conflict: Mode=mode Key=lhs -- 2 mappings
+  - rhs  (./lua/plugins/git.lua:27) desc=''
+  - rhs  (./lua/plugins/git.lua:28) desc=''
