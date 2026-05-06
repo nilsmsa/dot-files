@@ -162,7 +162,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local client = vim.lsp.get_client_by_id(args.data.client_id)
 
     -- Only proceed if the server supports document highlighting
-    if client and client.supports_method("textDocument/documentHighlight") then
+    if client and client:supports_method("textDocument/documentHighlight") then
       local group = vim.api.nvim_create_augroup("lsp_document_highlight", { clear = false })
 
       -- Clear existing autocmds for this buffer to avoid duplication
