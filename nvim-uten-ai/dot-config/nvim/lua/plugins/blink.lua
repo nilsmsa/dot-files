@@ -135,7 +135,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 				use_nvim_cmp_as_default = true,
 			},
 			completion = {
-				documentation = { auto_show = false },
+				documentation = { auto_show = true, auto_show_delay_ms = 500 },
 				trigger = { show_on_insert = false },
 				menu = { auto_show = false },
 				ghost_text = {
