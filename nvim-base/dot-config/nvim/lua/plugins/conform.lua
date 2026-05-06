@@ -3,6 +3,7 @@ vim.pack.add({ "https://github.com/stevearc/conform.nvim" })
 require("conform").setup({
 	formatters_by_ft = {
 		lua = { "stylua" },
+		rust = { "rustfmt" },
 		-- go = { "goimports", "gofmt" }, fixed below as suggested by JudgeGregg (https://github.com/tduyng/tduyng.github.io/issues/18) - see more #formatters-by-filetype
 		go = { "goimports", "gofmt", stop_after_first = true },
 		python = { "ruff_format", "black", stop_after_first = true },
