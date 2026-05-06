@@ -1,7 +1,0 @@
-require("config.options")
-require("config.keymaps")
-require("config.diagnostics")
-require("config.autocmds")
-require("config.lsp")
-require("config.tmux")
-require("config.spelling")

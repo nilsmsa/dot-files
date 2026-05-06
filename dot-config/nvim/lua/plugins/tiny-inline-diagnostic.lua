@@ -1,3 +1,0 @@
--- tiny-inline-diagnostic disabled: the trouble panel covers this use case
--- and the per-line virtual text blocks were perceived as noisy popups
--- vim.pack.add({ "https://github.com/rachartier/tiny-inline-diagnostic.nvim" })
