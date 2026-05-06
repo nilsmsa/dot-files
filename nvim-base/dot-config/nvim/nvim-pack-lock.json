@@ -22,8 +22,9 @@
       "src": "https://github.com/zbirenbaum/copilot.lua"
     },
     "crates.nvim": {
-      "rev": "694357861ec9ebf12475ddcdd04ea45a0923c32d",
-      "src": "https://github.com/saecki/crates.nvim"
+      "rev": "afcd1cc3eeceb5783676fc8464389b9216a29d05",
+      "src": "https://github.com/saecki/crates.nvim",
+      "version": "0.7.0 - 0.8.0"
     },
     "diffview.nvim": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
@@ -70,8 +71,9 @@
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "rustaceanvim": {
-      "rev": "38e7c5ee572b1fd35b0013eb2e2242152c08ffb8",
-      "src": "https://github.com/mrcjkb/rustaceanvim"
+      "rev": "bc391bbb8db0dbf3e3e9fe8f9f03112ecbab7463",
+      "src": "https://github.com/mrcjkb/rustaceanvim",
+      "version": "9.0.0 - 10.0.0"
     },
     "snacks.nvim": {
       "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
