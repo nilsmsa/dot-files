@@ -129,9 +129,9 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 				use_nvim_cmp_as_default = true,
 			},
 			completion = {
-				documentation = { auto_show = true, auto_show_delay_ms = 500 },
+				documentation = { auto_show = true, auto_show_delay_ms = 500, window = { border = "rounded" } },
 				trigger = { show_on_insert = false },
-				menu = { auto_show = false },
+				menu = { auto_show = false, border = "rounded" },
 				ghost_text = {
 					enabled = true,
 					-- Show the top suggestion even without opening the menu
