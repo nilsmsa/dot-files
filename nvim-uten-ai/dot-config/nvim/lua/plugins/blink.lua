@@ -122,13 +122,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
 				},
 			},
 			signature = {
-				enabled = true,
-				-- Optional: show automatically when entering a function
-				trigger = {
-					show_on_insert = false,
-				},
-				-- Optional: customize the window appearance
-				window = { border = "rounded" },
+				enabled = false,
 			},
 			appearance = {
 				nerd_font_variant = "mono",
