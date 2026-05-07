@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Define the command to be executed
+COMMAND=$1
+
+# Initialize a counter for the number of successful attempts
+successful_attempts=0
+
+echo "Running command repeatedly until it fails..."
+
+# Loop while the command succeeds (returns exit status 0)
+while $COMMAND; do
+  successful_attempts=$((successful_attempts + 1))
+  echo "Command succeeded. Attempts: $successful_attempts"
+  # Optional: Add a delay between attempts if needed
+  # sleep 1
+done
+
+echo "Command failed after $successful_attempts successful attempts."
+echo "Exit status of the last command: $?"

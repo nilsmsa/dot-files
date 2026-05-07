@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Check if gradlew exists and is executable in the current directory
+if [ -x "./gradlew" ]; then
+    ./gradlew "$@"
+else
+    gradle "$@"
+fi

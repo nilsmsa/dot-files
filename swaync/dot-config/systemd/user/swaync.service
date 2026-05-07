@@ -1,0 +1,11 @@
+[Unit]
+Description=Sway Notification Center
+Partof=hyprland-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/swaync
+Restart=always
+
+[Install]
+WantedBy=hyprland-session.target

@@ -1,0 +1,16 @@
+[Unit]
+Description=Idle manager for Wayland
+# Ensures it starts after the GUI session is ready
+PartOf=hyprland-session.target
+
+[Service]
+Type=simple
+Restart=always
+# Example command using swaylock and dpms
+ExecStart=/usr/bin/swayidle -w \
+    timeout 300 'swaylock -f' \
+    before-sleep 'swaylock -f'
+
+[Install]
+WantedBy=hyprland-session.target
+

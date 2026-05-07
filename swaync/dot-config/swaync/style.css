@@ -1,0 +1,97 @@
+@define-color bg-main #14161B;
+@define-color bg-alt #004D4D;
+@define-color fg-main #FFFFFF; /* Pure white for maximum contrast */
+@define-color accent #008B8B;
+@define-color purple #BD93F9; /* Bright neon-ish purple */
+@define-color red #FF3366;    /* Sharp, bright crimson for urgency */
+@define-color yellow #FF8C00; /* Vivid orange for warnings (matches previous active workspace suggestion) */
+
+* {
+    font-family: "Geist";
+    font-weight: 500;
+}
+
+.control-center {
+    background: alpha(@bg-main, 0.99);
+    border: 2px solid @accent;
+    border-radius: 12px;
+    color: @fg-main;
+    padding: 10px;
+}
+
+.notification {
+    background: @bg-alt;
+    border-radius: 10px;
+    margin: 6px 0px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    padding: 10px;
+}
+
+.notification-content {
+    margin: 5px;
+}
+
+.notification-default-action:hover {
+    background: alpha(@accent, 0.1);
+}
+
+.summary {
+    color: @accent;
+    font-size: 1.1rem;
+}
+
+.body {
+    color: @fg-main;
+}
+
+/* Specific Urgency Colors */
+.critical {
+    border: 2px solid @red;
+}
+
+.low {
+    border: 1px solid @bg-alt;
+}
+
+/* Control Center Widgets */
+.widget-title {
+    color: @purple;
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+.widget-dnd {
+    background: @bg-alt;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 5px;
+}
+
+.widget-dnd > switch {
+    background: @bg-main;
+    border-radius: 10px;
+    border: 1px solid @accent;
+}
+
+.widget-dnd > switch:checked {
+    background: @accent;
+}
+
+.widget-mpris {
+    background: @bg-alt;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.widget-clear-all {
+    background: @accent;
+    color: @bg-main;
+    border-radius: 8px;
+    padding: 5px;
+    margin: 10px;
+}
+
+.widget-clear-all:hover {
+    background: @purple;
+}

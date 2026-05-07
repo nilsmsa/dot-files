@@ -1,5 +1,4 @@
 require("plugins.mason")
-require("plugins.tokyonight")
 require("plugins.tiny-inline-diagnostic")
 require("plugins.blink")
 require("plugins.conform")

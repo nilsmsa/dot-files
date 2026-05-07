@@ -1,0 +1,44 @@
+outputs = "All"
+position = "Top"
+enable_esc_key = true
+
+[appearance]
+font = "Geist"
+font_size = 13
+text_color = "#dcdccc"
+scale_factor = 1.30
+workspace_colors = [ "#3E4452", "#008b8b", "#004d4d" ]
+
+[appearance.background_color]
+base = "#14161B"
+strong = "#008B8B"
+weak = "#004D4D"
+
+[modules]
+left = [ "Workspaces" ]
+center = [ "WindowTitle" ]
+right = [ "SystemInfo", [ "Tempo", "Settings", "CustomNotifications", "Lock", "Tray"] ]
+
+[tempo]
+clock_format = "%a %d %b %R"
+weather_location = { City = "Bergen" }
+weather_indicator = "Icon"
+
+[settings]
+shutdown_cmd = "graceful-shutdown.sh"
+reboot_cmd = "graceful-reboot.sh"
+
+
+[[CustomModule]]
+name = "Lock"
+command = "swaylock"
+icon = "󰷛"
+
+[[CustomModule]]
+name = "CustomNotifications"
+type = "Button"
+icon = ""
+command = "swaync-client -t -sw"
+listen_cmd = "swaync-client -swb"
+icons.'dnd.*' = ""
+alert = ".*notification"

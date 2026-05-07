@@ -9,7 +9,7 @@ local toggle_inlay_hints = function()
 end
 
 local default_keymaps = {
-	{ keys = "<leader>ca", func = vim.lsp.buf.code_action, desc = "Code Actions" },
+	{ keys = "<leader>ca", func = vim.lsp.buf.code_action, desc = "Code Actions", mode = { "n", "v" } },
 	{ keys = "<leader>cr", func = vim.lsp.buf.rename, desc = "Code Rename" },
 	{ keys = "<leader>k", func = vim.lsp.buf.hover, desc = "Hover Documentation", has = "hoverProvider" },
 	{ keys = "<leader>cd", func = vim.lsp.buf.definition, desc = "Goto Definition", has = "definitionProvider" },
