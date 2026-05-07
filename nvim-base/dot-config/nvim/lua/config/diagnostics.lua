@@ -14,7 +14,7 @@ local sev = vim.diagnostic.severity
 vim.diagnostic.config({
 	underline = true,
 	severity_sort = true,
-	update_in_insert = false,
+	update_in_insert = true,
 	float = {
 		border = "rounded",
 		source = true,

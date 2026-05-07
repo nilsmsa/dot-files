@@ -10,6 +10,10 @@ vim.g.rustaceanvim = {
 					-- Fill in parameter names as snippet tab stops instead of just adding ()
 					callable = { snippets = "fill_arguments" },
 				},
+				diagnostics = {
+					-- Faster diagnostics without waiting for cargo check
+					experimental = { enable = true },
+				},
 			},
 		},
 	},
