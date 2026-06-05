@@ -95,23 +95,5 @@ if [ -d "$BASH_SCRIPTS_DIR" ] && [ -r "$BASH_SCRIPTS_DIR" ]; then
     fi
   done
 fi
-. "$HOME/.cargo/env"
-eval "$(cplt --shell-setup)"
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Point Testcontainers to the Podman socket
-export DOCKER_HOST=unix:///run/user/$(id -u)/podman/podman.sock
-
-# Disable Ryuk (highly recommended for rootless Podman)
-export TESTCONTAINERS_RYUK_DISABLED=true
-
-
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
