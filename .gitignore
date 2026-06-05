@@ -2,4 +2,5 @@ dot-config/nvim/node_modules/
 dot-config/nvim/nvim-pack-lock.json
 dot-config/nvim/package-lock.json
 dot-config/nvim/package.json
+nvim-base/dot-config/nvim/nvim-pack-lock.json
 
