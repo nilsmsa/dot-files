@@ -1,0 +1,23 @@
+
+[Unit]
+Description=Graphical Polkit Authentication Agent
+Documentation=man:polkit(8)
+# Bind this agent specifically to the graphical session managed by Niri
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+Type=simple
+# CHOOSE ONE ExecStart line below and comment out/delete the other:
+
+# Option A: If you are using polkit-gnome (Adjust path if you are on Debian/Fedora/Arch)
+#ExecStart=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+ExecStart=/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
+
+Restart=on-failure
+RestartSec=1s
+
+[Install]
+WantedBy=niri.service

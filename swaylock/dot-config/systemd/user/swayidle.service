@@ -1,7 +1,9 @@
 [Unit]
 Description=Idle manager for Wayland
 # Ensures it starts after the GUI session is ready
-PartOf=hyprland-session.target
+PartOf=graphical-session.target
+After=graphical-session.target
+Requires=graphical-session.target
 
 [Service]
 Type=simple
@@ -12,5 +14,5 @@ ExecStart=/usr/bin/swayidle -w \
     before-sleep 'swaylock -f'
 
 [Install]
-WantedBy=hyprland-session.target
+WantedBy=niri.service
 

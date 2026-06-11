@@ -1,0 +1,15 @@
+#!/bin/bash
+# Define your settings here
+FOLDER="$HOME/Pictures/wallpapers/"
+#NAME="Niri cut.png"
+NAME="dark.jpg"
+WALLPAPER="$FOLDER$NAME"
+MODE="fill"
+COLOR="#1e1e2e"
+
+# Kill any old instances to prevent resource leaks
+pkill swaybg
+
+# Execute swaybg
+swaybg -i "$WALLPAPER" -m "$MODE" -c "$COLOR"
+

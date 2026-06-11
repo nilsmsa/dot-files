@@ -1,8 +1,9 @@
 [Unit]
 Description=aShell
 # Ensures it starts after the GUI session is ready
-PartOf=hyprland-session.target
-After=pipewire.service pipewire-pulse.service
+PartOf=graphical-session.target
+After=graphical-session.target pipewire.service pipewire-pulse.service
+Requires=graphical-session.target
 
 [Service]
 ExecStart=%h/.local/bin/ashell
@@ -10,5 +11,5 @@ Type=simple
 Restart=always
 
 [Install]
-WantedBy=hyprland-session.target
+WantedBy=niri.service
 
