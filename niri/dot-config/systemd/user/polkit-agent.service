@@ -13,7 +13,7 @@ Type=simple
 
 # Option A: If you are using polkit-gnome (Adjust path if you are on Debian/Fedora/Arch)
 #ExecStart=/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-ExecStart=/usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+ExecStart=/usr/libexec/polkit-mate-authentication-agent-1
 
 
 Restart=on-failure
