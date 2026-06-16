@@ -22,6 +22,7 @@ require("neo-tree").setup({
     -- Replaces Neovim's native netrw explorer with Neo-tree
     hijack_netrw_behavior = "open_default",
     group_empty_dirs = true, -- Compact empty directories into one node
+    scan_mode = "deep",
   }
 })
 

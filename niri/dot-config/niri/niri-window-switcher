@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+# Fetch the list of windows from Niri and group them by workspace
+WINDOWS=$(niri msg --json windows | jq 'sort_by(.workspace_id)')
+
+# Exit if no windows are open
+if [ -z "$WINDOWS" ] || [ "$WINDOWS" = "[]" ]; then
+    exit 0
+fi
+
+# Format the list for Fuzzel and display it
+# The \u0000icon\u001f syntax tells Fuzzel to look up and render the app's icon!
+# --index makes Fuzzel output the line number chosen instead of the text string
+choice_index=$(echo "$WINDOWS" | \
+    jq -r 'map("\(.title // .app_id)\u0000icon\u001f\(.app_id)") | .[]' | \
+    fuzzel --dmenu --index --prompt "Select Window: ")
+
+# Exit if the user presses Escape (fuzzel returns nothing)
+if [ -z "$choice_index" ]; then
+    exit 0
+fi
+
+# Extract the Niri Window ID using the selected index
+window_id=$(echo "$WINDOWS" | jq -r ".[$choice_index].id")
+
+# Tell Niri to focus that specific window
+niri msg action focus-window --id "$window_id"
