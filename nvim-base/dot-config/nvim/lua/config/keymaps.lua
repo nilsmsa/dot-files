@@ -4,6 +4,11 @@ local opts = { noremap = true, silent = true }
 -- ═══════════════════════════════════════════════════════════
 -- BUFFER NAVIGATION (think browser tabs)
 -- ═══════════════════════════════════════════════════════════
+map('n', '<Leader>a', function()
+  local current = vim.o.scrolloffpad
+  vim.opt.scrolloffpad = ((current % 2) * -1) + 1
+  print("scrolloffpad: " .. tostring(vim.o.scrolloffpad))
+end, { desc = "Toggle scrolloffpad" })
 
 -- Tab/Shift-Tab: Like browser tabs, feels natural
 map("n", "<Tab>", ":bnext<CR>", { desc = "Next buffer" })
@@ -107,17 +112,17 @@ map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
 -- Quickfix and location lists
 map("n", "<leader>xl", function()
-	local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
-	if not success and err then
-		vim.notify(err, vim.log.levels.ERROR)
-	end
+  local success, err = pcall(vim.fn.getloclist(0, { winid = 0 }).winid ~= 0 and vim.cmd.lclose or vim.cmd.lopen)
+  if not success and err then
+    vim.notify(err, vim.log.levels.ERROR)
+  end
 end, { desc = "Location List" })
 
 map("n", "<leader>xq", function()
-	local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
-	if not success and err then
-		vim.notify(err, vim.log.levels.ERROR)
-	end
+  local success, err = pcall(vim.fn.getqflist({ winid = 0 }).winid ~= 0 and vim.cmd.cclose or vim.cmd.copen)
+  if not success and err then
+    vim.notify(err, vim.log.levels.ERROR)
+  end
 end, { desc = "Quickfix List" })
 
 map("n", "[q", vim.cmd.cprev, { desc = "Previous Quickfix" })
@@ -178,7 +183,7 @@ map("n", "z0", "1z=", { desc = "Fix word under cursor" })
 -- ═══════════════════════════════════════════════════════════
 
 vim.api.nvim_create_user_command("PackUpdate", function()
-	vim.pack.update()
+  vim.pack.update()
 end, { desc = "Update all plugins" })
 
 map("n", "<leader>pu", "<cmd>PackUpdate<cr>", { desc = "Update Plugins" })
