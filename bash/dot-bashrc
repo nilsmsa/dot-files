@@ -97,3 +97,14 @@ if [ -d "$BASH_SCRIPTS_DIR" ] && [ -r "$BASH_SCRIPTS_DIR" ]; then
 fi
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
+
+HISTSIZE=10000
+HISTFILESIZE=20000
+# Append to the history file instead of overwriting it
+shopt -s histappend
+
+# Instantly save commands to disk after execution
+PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+HISTCONTROL=ignoreboth:erasedups
+export PATH=$PATH:$(go env GOPATH)/bin
+
