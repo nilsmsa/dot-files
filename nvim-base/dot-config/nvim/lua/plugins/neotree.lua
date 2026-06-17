@@ -23,6 +23,7 @@ require("neo-tree").setup({
     hijack_netrw_behavior = "open_default",
     group_empty_dirs = true, -- Compact empty directories into one node
     scan_mode = "deep",
+    use_libuv_file_watcher = true,
   }
 })
 
