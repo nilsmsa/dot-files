@@ -2,6 +2,21 @@ local function augroup(name)
   return vim.api.nvim_create_augroup("user_" .. name, { clear = true })
 end
 
+-- Only show cursorline in active window
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+  group = augroup("cursorline_active"),
+  callback = function()
+    vim.wo.cursorline = true
+  end,
+})
+
+vim.api.nvim_create_autocmd("WinLeave", {
+  group = augroup("cursorline_inactive"),
+  callback = function()
+    vim.wo.cursorline = false
+  end,
+})
+
 -- Check if we need to reload the file when it changed
 vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI", "TermClose", "TermLeave" }, {
   group = augroup("checktime"),

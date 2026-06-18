@@ -24,7 +24,7 @@ local function apply_custom_highlights()
     fg       = is_dark and "#dcdccc" or "#222222", -- foot fg
     fg_muted = is_dark and "#606060" or "#555555", -- foot bright-black
     border   = is_dark and "#3a3d45" or "#aeb0b8",
-    cursor   = is_dark and "#22252c" or "#c8cad2", -- cursor-line highlight
+    cursor   = is_dark and "#2c2f3a" or "#b8bac4", -- cursor-line highlight
     -- Git / diff
     added    = is_dark and "#bfebbf" or "#00aa46", -- bright green
     changed  = is_dark and "#8cd0d3" or "#007373", -- cyan
@@ -76,7 +76,7 @@ local function apply_custom_highlights()
 
     -- ── Editor UI ─────────────────────────────────────────────────────────────
     Normal       = { fg = colors.fg, bg = colors.bg },
-    NormalNC     = { fg = colors.fg, bg = colors.bg_alt },
+    NormalNC     = { fg = colors.fg, bg = colors.bg },
     CursorLine   = { bg = colors.cursor },
     CursorLineNr = { fg = colors.func, bold = true },
     LineNr       = { fg = colors.fg_muted },
