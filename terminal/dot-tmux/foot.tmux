@@ -31,7 +31,7 @@ set -g status-justify centre
 
 # 2. Left side: [K8s Context]  [Session]  [Git]
 # Colors: K8s (Cyan/colour6), Session (Blue/colour4), Git (Magenta/colour5), Separators (Dim/colour8)
-set -g status-left "#[fg=colour6,bg=default] #(~/.local/bin/ctx.sh) #[fg=colour8] #[fg=colour4,bold]#S #[fg=colour8,nobold] #[fg=colour5]#(/home/nms/go/bin/gitmux #{pane_current_path}) "
+set -g status-left "#[fg=colour6,bg=default] #(~/.local/bin/ctx.sh) #[fg=colour8] #[fg=colour4,bold]#S #[fg=colour8,nobold] #[fg=colour5]#(/home/nms/go/bin/gitmux -cfg ~/.config/gitmux.cfg #{pane_current_path}) "
 set -g status-left-length 80
 
 # 3. Window tabs: Thin separators, text-based highlighting
