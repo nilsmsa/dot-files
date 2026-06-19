@@ -24,7 +24,8 @@ local function apply_custom_highlights()
     fg       = is_dark and "#e4e4d4" or "#222222", -- foot fg
     fg_muted = is_dark and "#828282" or "#555555", -- foot bright-black
     border   = is_dark and "#404552" or "#aeb0b8",
-    cursor   = is_dark and "#262b36" or "#b8bac4", -- cursor-line highlight
+    cursor   = is_dark and "#2a3040" or "#b8bac4", -- cursor-line highlight
+    sel      = is_dark and "#2d3b55" or "#b0b4c0", -- selection in popups/pickers
     -- Git / diff
     added    = is_dark and "#b0dc8b" or "#00aa46", -- bright green
     changed  = is_dark and "#56b6c2" or "#007373", -- cyan
@@ -95,7 +96,7 @@ local function apply_custom_highlights()
 
     -- ── Completion menu ───────────────────────────────────────────────────────
     Pmenu        = { fg = colors.fg, bg = colors.bg_float },
-    PmenuSel     = { fg = colors.fg, bg = colors.cursor, bold = true },
+    PmenuSel     = { fg = colors.fg, bg = colors.sel, bold = true },
     PmenuSbar    = { bg = colors.bg_alt },
     PmenuThumb   = { bg = colors.border },
 
@@ -146,6 +147,10 @@ local function apply_custom_highlights()
     SpellCap   = { undercurl = true, sp = colors.warn },
     SpellRare  = { undercurl = true, sp = colors.hint },
     SpellLocal = { undercurl = true, sp = colors.info },
+
+    -- ── Snacks picker ─────────────────────────────────────────────────────────
+    SnacksPickerListCursorLine  = { bg = colors.sel, bold = true },
+    SnacksPickerInputCursorLine = { bg = colors.sel },
 
     -- ── Misc UI ───────────────────────────────────────────────────────────────
     MatchParen    = { fg = colors.func, bold = true, underline = true },
