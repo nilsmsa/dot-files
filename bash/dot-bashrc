@@ -98,6 +98,16 @@ fi
 # opencode
 export PATH=$HOME/.opencode/bin:$PATH
 
+# Colored prompt configuration (matching less-dark vim theme)
+PROMPT_COLOR_USER='\[\e[2;36m\]'        # Dim cyan for username (#56b6c2)
+PROMPT_COLOR_AT='\[\e[2;37m\]'          # Dim white for @
+PROMPT_COLOR_HOST='\[\e[2;34m\]'        # Dim blue for hostname (#61afef)
+PROMPT_COLOR_PATH='\[\e[0;32m\]'        # Dim green for path (#b0dc8b)
+PROMPT_COLOR_PROMPT='\[\e[1;35m\]'      # Bright magenta for prompt symbol (#c678dd)
+PROMPT_COLOR_RESET='\[\e[0m\]'          # Reset to default
+
+PS1="${PROMPT_COLOR_USER}\u${PROMPT_COLOR_AT}@${PROMPT_COLOR_HOST}\h ${PROMPT_COLOR_RESET}${PROMPT_COLOR_PATH}\w ${PROMPT_COLOR_PROMPT}»${PROMPT_COLOR_RESET} "
+
 HISTSIZE=10000
 HISTFILESIZE=20000
 # Append to the history file instead of overwriting it
