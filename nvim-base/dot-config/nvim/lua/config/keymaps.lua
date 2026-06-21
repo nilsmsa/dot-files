@@ -187,3 +187,13 @@ vim.api.nvim_create_user_command("PackUpdate", function()
 end, { desc = "Update all plugins" })
 
 map("n", "<leader>pu", "<cmd>PackUpdate<cr>", { desc = "Update Plugins" })
+
+-- ═══════════════════════════════════════════════════════════
+-- KOTLIN
+-- ═══════════════════════════════════════════════════════════
+
+map("n", "<leader>ki", "<cmd>KotlinIncomingCalls<CR>", { desc = "Kotlin Incoming Calls" })
+map("n", "<leader>kd", "<cmd>KotlinDocumentSymbol<CR>", { desc = "Kotlin Document Symbols" })
+map("n", "<leader>kr", "<cmd>KotlinReferences<CR>", { desc = "Kotlin References" })
+map("n", "<leader>kR", "<cmd>KotlinRename<CR>", { desc = "Kotlin Rename" })
+map("n", "<leader>kk", "<cmd>KotlinKillServer<CR>", { desc = "Kotlin Kill Server" })
