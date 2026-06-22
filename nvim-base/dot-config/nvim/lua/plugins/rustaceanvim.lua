@@ -7,15 +7,57 @@ vim.pack.add({ { src = "https://github.com/mrcjkb/rustaceanvim", version = vim.v
 -- Configuration is done via a global variable, NOT a setup function
 vim.g.rustaceanvim = {
   server = {
+    capabilities = vim.lsp.protocol.make_client_capabilities(),
     settings = {
       ["rust-analyzer"] = {
-        completion = {
-          -- Fill in parameter names as snippet tab stops instead of just adding ()
-          callable = { snippets = "fill_arguments" },
-        },
+        -- Aggressive diagnostics for maximum validation
         diagnostics = {
-          -- Faster diagnostics without waiting for cargo check
+          enable = true,
           experimental = { enable = true },
+          warningAsInfo = {
+            packages = {
+              "allow_warnings",
+            },
+          },
+        },
+        procMacro = {
+          enable = true,
+          attributes = {
+            enable = true,
+          },
+        },
+        cargoDanel = {
+          loadOutDirsFromCheck = true,
+        },
+        checkOnSave = {
+          command = "clippy",
+          allTargets = true,
+          allFeatures = true,
+          noDefaultFeatures = false,
+          features = "",
+          externalScripts = true,
+          args = {
+            "--workspace",
+          },
+        },
+        completion = {
+          callable = { snippets = "fill_arguments" },
+          postfix = { enable = true },
+          autoImport = { enable = true },
+          fullyQualified = false,
+        },
+        hover = {
+          actions = { enable = true },
+        },
+        inlayHints = {
+          enable = true,
+          maxLength = 30,
+          hideWhenHasFocusedText = false,
+          parameterNames = { enable = true, whenArgumentMatchesName = "none" },
+          typeAnnotations = { enable = true, hideClosureTypeName = false, hideExcessiveVerbosity = false },
+          livingTypeAnnotations = { enable = false },
+          chainAnnotations = { enable = true },
+          ignorePatterns = { "String", "Vec", "Box", "Rc", "Arc", "Option", "Result" },
         },
       },
     },
@@ -90,17 +132,19 @@ vim.g.rustaceanvim = {
     float_win_config = {
       border = "rounded",
     },
+    formatter = {
+      enable = true,
+      command = "rustfmt",
+    },
   },
 }
--- 2. Add ALL plugins to the runtime path together
+
 vim.pack.add({
   { src = "https://github.com/nvim-lua/plenary.nvim" },
   { src = "https://github.com/nvim-neotest/nvim-nio" },
   { src = "https://github.com/nvim-neotest/neotest" },
 })
 
--- 3. Run neotest setup LAST
--- (Now it can safely find the rustaceanvim adapter)
 require("neotest").setup({
   adapters = {
     require("rustaceanvim.neotest")
