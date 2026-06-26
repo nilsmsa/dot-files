@@ -3,10 +3,9 @@ position = "Top"
 enable_esc_key = true
 
 [appearance]
-font = "Geist"
-font_size = 13
+font = "JetBrainsMono Nerd Font"
 text_color = "#dcdccc"
-scale_factor = 1.30
+scale_factor = 1.5
 workspace_colors = [ "#3E4452", "#008b8b", "#004d4d" ]
 
 [appearance.background_color]

@@ -160,7 +160,8 @@ layout {
 }
 
 spawn-at-startup "/home/nms/.local/bin/wallpaper"
-
+// Set GTK text scaling to 1.25 (adjust the number as needed)
+spawn-sh-at-startup "gsettings set org.gnome.desktop.interface text-scaling-factor 1.25"
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
 

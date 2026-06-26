@@ -1,9 +1,9 @@
 profile Stadalone {
-  output eDP-1 enable scale 1.25
+  output eDP-1 enable scale 1.0
 }
 
 profile External {
   output eDP-1 disable
-  output * enable scale 1.25
+  output * enable scale 1.0
 }
 
