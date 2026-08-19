@@ -5,7 +5,7 @@ local function apply_custom_highlights()
 
   -- ─── Colour Palette ─────────────────────────────────────────────────────────
   -- Background/foreground sourced from foot themes:
-  --   dark:  terminal/dot-config/foot/themes/less-dark.ini  (bg=#1e2229, fg=#e4e4d4)
+  --   dark:  terminal/dot-config/foot/themes/less-dark.ini  (bg=#151a21, fg=#c2c2b7)
   --   light: terminal/dot-config/foot/themes/nvim-light.ini (bg=#e0e2ea, fg=#222222)
   -- Syntax and accent colours are derived from the same foot palettes for consistency.
   local colors = {
@@ -15,17 +15,17 @@ local function apply_custom_highlights()
     func     = is_dark and "#56b6c2" or "#2a5a9c", -- cyan / blue
     keyword  = is_dark and "#c678dd" or "#470045", -- magenta / magenta
     number   = is_dark and "#e5c07b" or "#6b5300", -- yellow / yellow-brown
-    variable = is_dark and "#e4e4d4" or "#222222", -- fg / fg
+    variable = is_dark and "#c2c2b7" or "#222222", -- fg / fg
     type     = is_dark and "#f5cf8a" or "#d0a600", -- bright yellow / bright yellow
     -- UI chrome (anchored to foot terminal backgrounds)
-    bg       = is_dark and "#1e2229" or "#e0e2ea", -- foot less-dark bg / foot light bg
-    bg_alt   = is_dark and "#252932" or "#d4d6de", -- slightly lighter / slightly darker
-    bg_float = is_dark and "#282d38" or "#eceef5", -- popup bg
-    fg       = is_dark and "#e4e4d4" or "#222222", -- foot fg
+    bg       = is_dark and "#151a21" or "#e0e2ea", -- foot less-dark bg / foot light bg
+    bg_alt   = is_dark and "#1c222b" or "#d4d6de", -- slightly lighter / slightly darker
+    bg_float = is_dark and "#202731" or "#eceef5", -- popup bg
+    fg       = is_dark and "#c2c2b7" or "#222222", -- foot fg
     fg_muted = is_dark and "#828282" or "#555555", -- foot bright-black
-    border   = is_dark and "#404552" or "#aeb0b8",
-    cursor   = is_dark and "#2a3040" or "#b8bac4", -- cursor-line highlight
-    sel      = is_dark and "#2d3b55" or "#b0b4c0", -- selection in popups/pickers
+    border   = is_dark and "#343b47" or "#aeb0b8",
+    cursor   = is_dark and "#222936" or "#b8bac4", -- cursor-line highlight
+    sel      = is_dark and "#26344c" or "#b0b4c0", -- selection in popups/pickers
     -- Git / diff
     added    = is_dark and "#b0dc8b" or "#00aa46", -- bright green
     changed  = is_dark and "#56b6c2" or "#007373", -- cyan
