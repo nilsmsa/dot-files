@@ -14,7 +14,7 @@ strong = "#008B8B"
 weak = "#004D4D"
 
 [modules]
-left = [ "Workspaces" ]
+left = [ [ "ClusterContext", "Workspaces" ] ]
 center = [ "WindowTitle" ]
 right = [ "SystemInfo", [ "Tempo", "Settings", "CustomNotifications", "Lock", "Tray"] ]
 
@@ -27,6 +27,17 @@ weather_indicator = "Icon"
 shutdown_cmd = "graceful-shutdown.sh"
 reboot_cmd = "graceful-reboot.sh"
 
+
+[[CustomModule]]
+name = "ClusterContext"
+type = "Button"
+icon = "󱃾"
+listen_cmd = '''
+while true; do
+  "$HOME/.local/bin/ctx.sh" | jq -Rsc '{ text: rtrimstr("\n"), alt: "" }'
+  sleep 5
+done
+'''
 
 [[CustomModule]]
 name = "Lock"
