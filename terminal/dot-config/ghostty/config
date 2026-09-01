@@ -1,0 +1,12 @@
+font-family = JetBrainsMono Nerd Font
+font-size = 18
+
+theme = light:foot-nvim-light,dark:foot-less-dark
+
+window-padding-x = 15
+window-padding-y = 12
+
+cursor-style = block
+cursor-style-blink = false
+
+mouse-hide-while-typing = true
