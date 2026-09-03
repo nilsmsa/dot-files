@@ -7,12 +7,14 @@ input {
             // For example:
             layout "no"
             // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
-
+            variant "nodeadkeys"
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
             // localectl set-x11-keymap.
-            options "caps:escape_shifted_capslock"
+            options "caps:escape_shifted_capslock,compose:menu"
         }
+        repeat-rate 35
+        repeat-delay 400
 
         // Enable numlock on startup, omitting this setting disables it.
         numlock

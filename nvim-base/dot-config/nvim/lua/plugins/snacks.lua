@@ -189,6 +189,7 @@ local keymaps = {
   { "<leader>fg", function() Snacks.picker.git_files() end,                               desc = "Find Git Files" },
   { "<leader>fp", function() Snacks.picker.projects() end,                                desc = "Projects" },
   { "<leader>fr", function() Snacks.picker.recent() end,                                  desc = "Recent" },
+  { "<leader>fy", function() Snacks.picker.registers() end,                               desc = "Find Yanked/Deleted" },
   -- git: Only keep file history picker (commits left, file right)
   -- Other git operations handled via terminal: git add, commit, push, rebase
   -- Conflict resolution handled via diffview: <leader>vd
