@@ -15,7 +15,7 @@ require("neo-tree").setup({
   -- Add this line:
   popup_border_style = "rounded", -- Options: "rounded", "single", "solid"
   window = {
-    position = "right",           -- Places the explorer on the right
+    position = "left",            -- Places the explorer on the right
     width = 40,                   -- Adjust to your preferred width
   },
   filesystem = {
