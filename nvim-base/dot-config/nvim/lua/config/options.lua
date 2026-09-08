@@ -23,12 +23,12 @@ opt.hlsearch = false  -- Don't highlight search results
 opt.incsearch = true  -- Show matches as you type
 
 -- Visual settings
-opt.termguicolors = true  -- Enable 24-bit colors
-opt.signcolumn = "yes"    -- Always show sign column
-opt.showmatch = true      -- Highlight matching brackets
-opt.matchtime = 2         -- How long to show matching bracket
-opt.cmdheight = 1         -- Command line height
-opt.showmode = false      -- Don't show mode in command line
+opt.termguicolors = true -- Enable 24-bit colors
+opt.signcolumn = "yes"   -- Always show sign column
+opt.showmatch = true     -- Highlight matching brackets
+opt.matchtime = 2        -- How long to show matching bracket
+opt.cmdheight = 1        -- Command line height
+opt.showmode = false     -- Don't show mode in command line
 opt.title = true
 opt.titlestring = "%{fnamemodify(getcwd(), ':~')} :: Neovim"
 opt.pumheight = 10        -- Popup menu height
