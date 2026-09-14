@@ -34,6 +34,10 @@ vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", {
   desc = "Toggle Neo-tree"
 })
 
+vim.keymap.set("n", "<leader>er", "<cmd>Neotree filesystem reveal<CR>", {
+  desc = "Reveal current file in Neo-tree",
+})
+
 local neotree_position = "right"
 
 vim.keymap.set("n", "<leader>E", function()
