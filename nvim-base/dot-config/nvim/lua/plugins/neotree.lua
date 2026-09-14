@@ -33,3 +33,13 @@ vim.keymap.set("n", "<leader>e", "<cmd>Neotree toggle<CR>", {
   silent = true,
   desc = "Toggle Neo-tree"
 })
+
+local neotree_position = "right"
+
+vim.keymap.set("n", "<leader>E", function()
+  neotree_position = neotree_position == "right" and "left" or "right"
+  vim.cmd("Neotree close")
+  vim.cmd("Neotree filesystem reveal position=" .. neotree_position)
+end, {
+  desc = "Move Neo-tree to the opposite side",
+})
