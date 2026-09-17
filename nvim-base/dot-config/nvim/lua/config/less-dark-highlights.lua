@@ -26,6 +26,7 @@ local function apply_custom_highlights()
     border   = is_dark and "#343b47" or "#aeb0b8",
     cursor   = is_dark and "#222936" or "#b8bac4", -- cursor-line highlight
     sel      = is_dark and "#26344c" or "#b0b4c0", -- selection in popups/pickers
+    dim      = is_dark and "#3d434e" or "#9a9ca4", -- dimmer than comment, closer to bg
     -- Git / diff
     added    = is_dark and "#b0dc8b" or "#00aa46", -- bright green
     changed  = is_dark and "#56b6c2" or "#007373", -- cyan
@@ -151,6 +152,9 @@ local function apply_custom_highlights()
     -- ── Snacks picker ─────────────────────────────────────────────────────────
     SnacksPickerListCursorLine  = { bg = colors.sel, bold = true },
     SnacksPickerInputCursorLine = { bg = colors.sel },
+
+    -- ── Snacks dim ────────────────────────────────────────────────────────────
+    SnacksDim = { fg = colors.dim },
 
     -- ── Misc UI ───────────────────────────────────────────────────────────────
     MatchParen    = { fg = colors.func, bold = true, underline = true },

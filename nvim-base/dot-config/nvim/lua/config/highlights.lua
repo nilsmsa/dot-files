@@ -25,6 +25,7 @@ local function apply_custom_highlights()
     fg_muted = is_dark and "#606060" or "#555555", -- foot bright-black
     border   = is_dark and "#3a3d45" or "#aeb0b8",
     cursor   = is_dark and "#2c2f3a" or "#b8bac4", -- cursor-line highlight
+    dim      = is_dark and "#454850" or "#9a9ca4", -- dimmer than comment, closer to bg
     -- Git / diff
     added    = is_dark and "#bfebbf" or "#00aa46", -- bright green
     changed  = is_dark and "#8cd0d3" or "#007373", -- cyan
@@ -87,6 +88,9 @@ local function apply_custom_highlights()
     EndOfBuffer  = { fg = colors.fg_muted },
     Folded       = { fg = colors.comment, bg = colors.bg_alt, italic = true },
     FoldColumn   = { fg = colors.fg_muted, bg = colors.bg },
+
+    -- ── Snacks (snacks.nvim) ──────────────────────────────────────────────────
+    SnacksDim    = { fg = colors.dim },
 
     -- ── Floating windows & popups ─────────────────────────────────────────────
     NormalFloat  = { fg = colors.fg, bg = colors.bg_float },
