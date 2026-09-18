@@ -24,7 +24,6 @@ A **NerdFonts v3 mono** font is required for icons (diagnostic symbols, git sign
 | `git` | ✅ | gitsigns, diffview, lazygit |
 | `ripgrep` | ✅ | grep/search — `grepprg = "rg --vimgrep"`, also used by grug-far |
 | `gcc` or `clang` | ✅ | compiling Treesitter parsers |
-| `tmux` | ✅ | window renaming, pane navigation (vim-tmux-navigator) |
 | `curl` + `unzip` + `tar` | ✅ | Mason uses these to download/unpack LSP servers & tools |
 | `node` / `npm` | ✅ | Copilot LSP backend + biome formatter |
 | `lazygit` | recommended | in-editor git UI (`<leader>gg`) |

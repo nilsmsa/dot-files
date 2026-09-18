@@ -21,8 +21,11 @@ map("n", "<leader>bb", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 -- WINDOW MANAGEMENT (splitting and navigation)
 -- ═══════════════════════════════════════════════════════════
 
--- C-hjkl window/pane navigation is handled by vim-tmux-navigator plugin
--- (seamlessly crosses nvim splits AND tmux pane boundaries)
+-- C-hjkl window navigation
+map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window" })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window" })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window" })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window" })
 
 -- Resize windows (Ctrl+Shift+HJKL via Alacritty chars)
 map("n", "<C-RIGHT>", "<cmd>vertical resize -5<CR>", opts)
@@ -141,7 +144,10 @@ map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
 
 -- Terminal mode navigation
 map("t", "<esc><esc>", "<c-\\><c-n>", { desc = "Enter Normal Mode" })
--- C-hjkl in terminal mode is handled by vim-tmux-navigator plugin
+map("t", "<C-h>", "<c-\\><c-n><C-w>h", { desc = "Go to Left Window" })
+map("t", "<C-j>", "<c-\\><c-n><C-w>j", { desc = "Go to Lower Window" })
+map("t", "<C-k>", "<c-\\><c-n><C-w>k", { desc = "Go to Upper Window" })
+map("t", "<C-l>", "<c-\\><c-n><C-w>l", { desc = "Go to Right Window" })
 map("t", "<C-/>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 map("t", "<c-_>", "<cmd>close<cr>", { desc = "which_key_ignore" })
 
