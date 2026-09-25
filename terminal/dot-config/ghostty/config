@@ -1,9 +1,10 @@
 font-family = JetBrainsMono Nerd Font
-font-size = 16
+font-size = 18
 
-freetype-load-flags = false
+freetype-load-flags = light,autohint
 alpha-blending = linear-corrected
 adjust-cell-height = 10%
+font-style = Medium
 
 theme = light:foot-nvim-light,dark:foot-less-dark
 
