@@ -1,38 +1,24 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
--- Portert fra ghostty/themes/foot-less-dark og foot-nvim-light
+-- Fargene ligger i ~/.config/theme/palette.lua og deles med neovim
+local palette = dofile(wezterm.home_dir .. '/.config/theme/palette.lua')
+
+local function scheme(p)
+  return {
+    foreground = p.term.foreground,
+    background = p.term.background,
+    cursor_bg = p.term.cursor,
+    cursor_border = p.term.cursor,
+    cursor_fg = p.term.background,
+    ansi = p.term.ansi,
+    brights = p.term.brights,
+  }
+end
+
 local schemes = {
-  dark = {
-    foreground = '#a8a89e',
-    background = '#151a21',
-    cursor_bg = '#7a9cc6',
-    cursor_border = '#7a9cc6',
-    cursor_fg = '#151a21',
-    ansi = {
-      '#3c3c3c', '#e06c75', '#98c379', '#e5c07b',
-      '#61afef', '#c678dd', '#56b6c2', '#d6d6ca',
-    },
-    brights = {
-      '#828282', '#f08085', '#b0dc8b', '#f5cf8a',
-      '#82c0e8', '#d090d0', '#78d4d8', '#e4e4d8',
-    },
-  },
-  light = {
-    foreground = '#3d3d3d',
-    background = '#f0e8d8',
-    cursor_bg = '#6f8fbd',
-    cursor_border = '#6f8fbd',
-    cursor_fg = '#f0e8d8',
-    ansi = {
-      '#f5ede0', '#d63333', '#226b3d', '#a87b3e',
-      '#2b5b9c', '#5a226e', '#226e6e', '#555555',
-    },
-    brights = {
-      '#7b7b7b', '#e64444', '#338f5a', '#dcc26e',
-      '#5c94e4', '#a63aa6', '#33b6b6', '#2a2a2a',
-    },
-  },
+  dark = scheme(palette.dark),
+  light = scheme(palette.light),
 }
 
 config.color_schemes = {

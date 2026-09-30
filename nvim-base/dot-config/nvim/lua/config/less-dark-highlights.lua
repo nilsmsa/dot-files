@@ -3,43 +3,9 @@ local M = {}
 local function apply_custom_highlights()
   local is_dark = vim.o.background == "dark"
 
-  -- ─── Colour Palette ─────────────────────────────────────────────────────────
-  -- Background/foreground sourced from foot themes:
-  --   dark:  terminal/dot-config/foot/themes/less-dark.ini  (bg=#151a21, fg=#c2c2b7)
-  --   light: terminal/dot-config/foot/themes/nvim-light.ini (bg=#e0e2ea, fg=#222222)
-  -- Syntax and accent colours are derived from the same foot palettes for consistency.
-  local colors = {
-    -- Syntax (dark: less-dark foot palette; light: nvim-light foot palette)
-    comment  = is_dark and "#61afef" or "#555555", -- foot blue / bright-black
-    string   = is_dark and "#b0dc8b" or "#005523", -- bright green / green
-    func     = is_dark and "#56b6c2" or "#2a5a9c", -- cyan / blue
-    keyword  = is_dark and "#c678dd" or "#470045", -- magenta / magenta
-    number   = is_dark and "#e5c07b" or "#6b5300", -- yellow / yellow-brown
-    variable = is_dark and "#c2c2b7" or "#222222", -- fg / fg
-    type     = is_dark and "#f5cf8a" or "#d0a600", -- bright yellow / bright yellow
-    -- UI chrome (anchored to foot terminal backgrounds)
-    bg       = is_dark and "#151a21" or "#e0e2ea", -- foot less-dark bg / foot light bg
-    bg_alt   = is_dark and "#1c222b" or "#d4d6de", -- slightly lighter / slightly darker
-    bg_float = is_dark and "#202731" or "#eceef5", -- popup bg
-    fg       = is_dark and "#c2c2b7" or "#222222", -- foot fg
-    fg_muted = is_dark and "#828282" or "#555555", -- foot bright-black
-    border   = is_dark and "#343b47" or "#aeb0b8",
-    cursor   = is_dark and "#222936" or "#b8bac4", -- cursor-line highlight
-    sel      = is_dark and "#26344c" or "#b0b4c0", -- selection in popups/pickers
-    dim      = is_dark and "#3d434e" or "#9a9ca4", -- dimmer than comment, closer to bg
-    -- Git / diff
-    added    = is_dark and "#b0dc8b" or "#00aa46", -- bright green
-    changed  = is_dark and "#56b6c2" or "#007373", -- cyan
-    removed  = is_dark and "#f08085" or "#cc0000", -- bright red / red
-    -- Diagnostics
-    error    = is_dark and "#f08085" or "#cc0000",
-    warn     = is_dark and "#f5cf8a" or "#d0a600",
-    info     = is_dark and "#56b6c2" or "#2a5a9c",
-    hint     = is_dark and "#56b6c2" or "#007373",
-    -- Search / selection
-    search   = is_dark and "#f5cf8a" or "#d0a600",
-    visual   = is_dark and "#2a2f3c" or "#c0c2ca",
-  }
+  -- Paletten deles med wezterm: ~/.config/theme/palette.lua
+  local palette = dofile(vim.fn.expand("~/.config/theme/palette.lua"))
+  local colors = is_dark and palette.dark.editor or palette.light.editor
 
   local highlights = {
     -- ── Syntax ───────────────────────────────────────────────────────────────
@@ -112,10 +78,10 @@ local function apply_custom_highlights()
     VisualNOS    = { bg = colors.visual },
 
     -- ── Diff ──────────────────────────────────────────────────────────────────
-    DiffAdd      = { bg = is_dark and "#242e24" or "#c8eac8" },
-    DiffChange   = { bg = is_dark and "#23293a" or "#c8dde8" },
-    DiffDelete   = { fg = colors.removed, bg = is_dark and "#30252a" or "#ead0d0" },
-    DiffText     = { bg = is_dark and "#263242" or "#aacfe0", bold = true },
+    DiffAdd      = { bg = colors.diff_add },
+    DiffChange   = { bg = colors.diff_change },
+    DiffDelete   = { fg = colors.removed, bg = colors.diff_delete },
+    DiffText     = { bg = colors.diff_text, bold = true },
 
     -- ── Diagnostics ───────────────────────────────────────────────────────────
     DiagnosticError          = { fg = colors.error },
