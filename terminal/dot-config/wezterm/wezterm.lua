@@ -34,8 +34,7 @@ config.color_scheme = 'foot-less-dark'
 config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular' })
 config.font_size = 22
 config.line_height = 1.1
-config.freetype_load_target = 'Normal'
-config.freetype_load_flags = 'NO_HINTING'
+config.freetype_load_target = 'Light'
 
 config.front_end = 'OpenGL'
 config.max_fps = 120
