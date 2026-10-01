@@ -2,7 +2,8 @@
 # Define your settings here
 FOLDER="$HOME/Pictures/wallpapers/"
 #NAME="Niri cut.png"
-NAME="dark.jpg"
+#NAME="dark.jpg"
+NAME="wallhaven-4x2kpv.jpg"
 WALLPAPER="$FOLDER$NAME"
 MODE="fill"
 COLOR="#1e1e2e"

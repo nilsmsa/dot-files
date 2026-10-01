@@ -4,19 +4,19 @@ enable_esc_key = true
 
 [appearance]
 font = "JetBrainsMono Nerd Font"
-text_color = "#dcdccc"
+text_color = "#909088"
 scale_factor = 1.5
 workspace_colors = [ "#3E4452", "#008b8b", "#004d4d" ]
 
 [appearance.background_color]
 base = "#14161B"
-strong = "#008B8B"
-weak = "#004D4D"
+strong = "#3E4452"
+weak = "#2A2F3A"
 
 [modules]
 left = [ [ "ClusterContext", "Workspaces" ] ]
 center = [ "WindowTitle" ]
-right = [ "SystemInfo", [ "Tempo", "Settings", "CustomNotifications", "Lock", "Tray"] ]
+right = [ "SystemInfo", [ "Tempo", "Settings", "CustomNotifications", "Lock", "Naisdevice"] ]
 
 [tempo]
 clock_format = "%a %d %b %R"
@@ -52,3 +52,22 @@ command = "swaync-client -t -sw"
 listen_cmd = "swaync-client -swb"
 icons.'dnd.*' = ""
 alert = ".*notification"
+
+[[CustomModule]]
+name = "Naisdevice"
+type = "Button"
+icon = "󰖂"
+command = "nais device connect"
+on_right_click = "nais device disconnect"
+alert = "^(Disconnected|Bootstrapping|Disconnecting|Unhealthy|Quitting|Authenticating|AuthBackoff|Reconfiguring|Unknown)$"
+listen_cmd = '''
+while true; do
+  nais device status -o json 2>/dev/null | jq -c '
+    ({"0":"Disconnected","1":"Bootstrapping","2":"Connected","3":"Disconnecting",
+      "4":"Unhealthy","5":"Quitting","6":"Authenticating","9":"AuthBackoff",
+      "10":"Reconfiguring"}[(.connectionState // -1 | tostring)] // "Unknown") as $s
+    | { text: (if $s == "Connected" then "" else $s end), alt: $s }
+  ' || echo '{"text":"Ukjent","alt":"Unknown"}'
+  sleep 10
+done
+'''
