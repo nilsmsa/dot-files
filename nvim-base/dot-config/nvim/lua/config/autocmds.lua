@@ -197,3 +197,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+-- Automatically start deps-lsp for specific filetypes
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "toml", "json", "yaml", "xml", "groovy", "kotlin" },
+  callback = function(args)
+    vim.lsp.start({
+      name = 'deps-lsp',
+      cmd = { 'deps-lsp', '--stdio' },
+      -- Find the root directory of your project (Neovim 0.10+ API)
+      root_dir = vim.fs.root(args.buf, { '.git', 'settings.gradle.kts', 'settings.gradle' }),
+    })
+  end,
+})

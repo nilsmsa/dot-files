@@ -122,6 +122,10 @@ local function apply_custom_highlights()
     -- ── Snacks dim ────────────────────────────────────────────────────────────
     SnacksDim = { fg = colors.dim },
 
+    -- ── Neo-tree icons ────────────────────────────────────────────────────────
+    NeoTreeFileIcon      = { fg = colors.fg_muted },
+    NeoTreeDirectoryIcon = { fg = colors.fg_muted },
+
     -- ── Misc UI ───────────────────────────────────────────────────────────────
     MatchParen    = { fg = colors.func, bold = true, underline = true },
     NonText       = { fg = colors.fg_muted },

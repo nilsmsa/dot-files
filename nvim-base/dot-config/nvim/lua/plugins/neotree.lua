@@ -14,6 +14,21 @@ vim.pack.add({
 require("neo-tree").setup({
   -- Add this line:
   popup_border_style = "rounded", -- Options: "rounded", "single", "solid"
+  default_component_configs = {
+    icon = {
+      -- Behold filtypeikonene, men bruk Neo-tree sin dempede farge i stedet for devicons-fargen.
+      provider = function(icon, node)
+        if node.type == "file" or node.type == "terminal" then
+          local ok, devicons = pcall(require, "nvim-web-devicons")
+          if ok then
+            local name = node.type == "terminal" and "terminal" or node.name
+            local symbol = devicons.get_icon(name)
+            icon.text = symbol or icon.text
+          end
+        end
+      end,
+    },
+  },
   window = {
     position = "right",           -- Places the explorer on the right
     width = 40,                   -- Adjust to your preferred width
