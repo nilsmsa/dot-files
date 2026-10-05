@@ -4,25 +4,25 @@
 -- Hver modus har:
 --   term    : felter wezterm bruker (foreground, background, cursor, ansi, brights)
 --   editor  : felter neovim bruker (syntaks, UI, diff, diagnostikk)
--- I mørk modus hentes syntaksfargene fra ANSI-fargene, så de følger hverandre.
+-- Mørk modus er basert på Catppuccin Mocha, med mørkere flater og dempede aksenter.
 
 local M = {}
 
--- ─── Mørk (foot less-dark) ────────────────────────────────────────────────────
+-- ─── Mørk (dempet Catppuccin Mocha) ───────────────────────────────────────────
 local d = {
-  black = '#3c3c3c', red = '#e06c75', green = '#98c379', yellow = '#e5c07b',
-  blue = '#61afef', magenta = '#c678dd', cyan = '#56b6c2', white = '#d6d6ca',
-  bright_black = '#828282', bright_red = '#f08085', bright_green = '#b0dc8b',
-  bright_yellow = '#f5cf8a', bright_blue = '#82c0e8', bright_magenta = '#d090d0',
-  bright_cyan = '#78d4d8', bright_white = '#e4e4d8',
+  black = '#262735', red = '#ab7284', green = '#79a37e', yellow = '#b29f82',
+  blue = '#7489ad', magenta = '#9681a8', cyan = '#719994', white = '#aeb2c3',
+  bright_black = '#707486', bright_red = '#b98394', bright_green = '#88b08b',
+  bright_yellow = '#bda98c', bright_blue = '#8197b8', bright_magenta = '#a38db6',
+  bright_cyan = '#7fa7a1', bright_white = '#bac0cf',
 }
-local dark_bg = '#151a21'
+local dark_bg = '#101019'
 
 M.dark = {
   term = {
-    foreground = '#a8a89e',
+    foreground = d.white,
     background = dark_bg,
-    cursor = '#7a9cc6',
+    cursor = d.bright_blue,
     ansi = { d.black, d.red, d.green, d.yellow, d.blue, d.magenta, d.cyan, d.white },
     brights = {
       d.bright_black, d.bright_red, d.bright_green, d.bright_yellow,
@@ -31,31 +31,31 @@ M.dark = {
   },
   editor = {
     -- Syntaks
-    comment = d.blue,
-    string = d.bright_green,
+    comment = d.bright_black,
+    string = d.green,
     func = d.cyan,
     keyword = d.magenta,
     number = d.yellow,
-    variable = '#c2c2b7',
-    type = d.bright_yellow,
+    variable = d.white,
+    type = d.yellow,
     -- UI
     bg = dark_bg,
-    bg_alt = '#1c222b',
-    bg_float = '#202731',
-    fg = '#c2c2b7',
+    bg_alt = '#191923',
+    bg_float = '#22222e',
+    fg = d.white,
     fg_muted = d.bright_black,
-    border = '#343b47',
-    cursor = '#222936',
-    sel = '#26344c',
-    dim = '#3d434e',
+    border = '#363745',
+    cursor = '#20212e',
+    sel = '#33384a',
+    dim = '#4b4d60',
     -- Git / diff
     added = d.bright_green,
     changed = d.cyan,
     removed = d.bright_red,
-    diff_add = '#242e24',
-    diff_change = '#23293a',
-    diff_delete = '#30252a',
-    diff_text = '#263242',
+    diff_add = '#1c2c27',
+    diff_change = '#232b3e',
+    diff_delete = '#30232e',
+    diff_text = '#303951',
     -- Diagnostikk
     error = d.bright_red,
     warn = d.bright_yellow,
@@ -63,7 +63,7 @@ M.dark = {
     hint = d.cyan,
     -- Søk / markering
     search = d.bright_yellow,
-    visual = '#2a2f3c',
+    visual = '#303345',
   },
 }
 

@@ -2,7 +2,9 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- Fargene ligger i ~/.config/theme/palette.lua og deles med neovim
-local palette = dofile(wezterm.home_dir .. '/.config/theme/palette.lua')
+local palette_path = wezterm.home_dir .. '/.config/theme/palette.lua'
+wezterm.add_to_config_reload_watch_list(palette_path)
+local palette = dofile(palette_path)
 
 local function scheme(p)
   return {

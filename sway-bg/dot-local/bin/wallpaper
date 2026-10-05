@@ -3,7 +3,7 @@
 FOLDER="$HOME/Pictures/wallpapers/"
 #NAME="Niri cut.png"
 #NAME="dark.jpg"
-NAME="wallhaven-4x2kpv.jpg"
+NAME="dark_sand.jpg"
 WALLPAPER="$FOLDER$NAME"
 MODE="fill"
 COLOR="#1e1e2e"
