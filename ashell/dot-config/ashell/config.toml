@@ -4,14 +4,22 @@ enable_esc_key = true
 
 [appearance]
 font = "JetBrainsMono Nerd Font"
-text_color = "#909088"
+text_color = "#7E817C"
 scale_factor = 1.5
-workspace_colors = [ "#3E4452", "#008b8b", "#004d4d" ]
+workspace_colors = [ "#343940", "#4B6968", "#385251" ]
+
+[appearance.warning_color]
+base = "#857960"
+strong = "#93866A"
+
+[appearance.danger_color]
+base = "#865F60"
+strong = "#987071"
 
 [appearance.background_color]
-base = "#14161B"
-strong = "#3E4452"
-weak = "#2A2F3A"
+base = "#111317"
+strong = "#30353A"
+weak = "#22272B"
 
 [modules]
 left = [ [ "ClusterContext", "Workspaces" ] ]
@@ -47,4 +55,3 @@ command = "swaync-client -t -sw"
 listen_cmd = "swaync-client -swb"
 icons.'dnd.*' = ""
 alert = ".*notification"
-
