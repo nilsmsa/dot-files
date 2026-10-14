@@ -28,7 +28,7 @@ local default_keymaps = {
     has = "typeDefinitionProvider",
   },
   { keys = "<leader>K",  func = vim.lsp.buf.hover,          desc = "Hover Docs",     has = "hoverProvider" },
-  { keys = "<leader>cs", func = vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelpProvider" },
+  { keys = "<leader>cS", func = vim.lsp.buf.signature_help, desc = "Signature Help", has = "signatureHelpProvider" },
   {
     keys = "<leader>cf",
     func = function()
@@ -125,4 +125,3 @@ vim.lsp.enable({
 if vim.g.lsp_on_demands then
   vim.lsp.enable(vim.g.lsp_on_demands)
 end
-

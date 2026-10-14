@@ -39,6 +39,52 @@ map("n", "<leader>wd", "<C-W>c", { desc = "Delete Window", remap = true })
 map("n", "<leader>sh", "<C-W>s", { desc = "Split Window Below", remap = true })
 map("n", "<leader>sv", "<C-W>v", { desc = "Split Window Right", remap = true })
 
+-- Direkte hopp mellom kodevinduet og sidepanelene i gjeldende fane.
+local function code_window(win)
+  local buf = vim.api.nvim_win_get_buf(win)
+  return vim.bo[buf].buftype == "" and vim.api.nvim_win_get_config(win).relative == ""
+end
+
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+  callback = function()
+    local win = vim.api.nvim_get_current_win()
+    if code_window(win) then
+      vim.t.last_code_win = win
+    end
+  end,
+})
+
+local function focus_pane(matches)
+  for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+    if matches(win) then
+      vim.api.nvim_set_current_win(win)
+      return
+    end
+  end
+end
+
+map("n", "<leader>1", function()
+  local win = vim.t.last_code_win
+  if win and vim.api.nvim_win_is_valid(win) and vim.api.nvim_win_get_tabpage(win) == vim.api.nvim_get_current_tabpage() and code_window(win) then
+    vim.api.nvim_set_current_win(win)
+  else
+    focus_pane(code_window)
+  end
+end, { desc = "Go to Code Window" })
+
+map("n", "<leader>2", function()
+  focus_pane(function(win)
+    return vim.bo[vim.api.nvim_win_get_buf(win)].filetype == "neo-tree"
+  end)
+end, { desc = "Go to Neo-tree" })
+
+map("n", "<leader>3", function()
+  focus_pane(function(win)
+    local trouble = vim.w[win].trouble
+    return trouble and trouble.mode == "symbols"
+  end)
+end, { desc = "Go to Symbols" })
+
 -- ═══════════════════════════════════════════════════════════
 -- SMART LINE MOVEMENT (the VSCode experience)
 -- ═══════════════════════════════════════════════════════════
