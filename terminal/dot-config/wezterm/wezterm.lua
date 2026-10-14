@@ -34,6 +34,11 @@ config.color_schemes = {
 config.color_scheme = 'foot-less-dark'
 
 config.font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular' })
+-- Vis tekst som ber om fet skrift med vanlig tykkelse, også når den er kursiv.
+config.font_rules = {
+  { intensity = 'Bold', italic = false, font = config.font },
+  { intensity = 'Bold', italic = true, font = wezterm.font('JetBrainsMono Nerd Font', { weight = 'Regular', italic = true }) },
+}
 config.font_size = 22
 config.line_height = 1.1
 config.freetype_load_target = 'Light'
